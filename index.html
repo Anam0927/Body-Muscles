@@ -9,6 +9,7 @@
 
     <!-- PRECONNECTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preconnect" href="https://kit.fontawesome.com/d5cd0f3f82.js" crossorigin="">
 
     <!-- FONT PRELOAD -->
     <link rel="preload" href="https://fonts.gstatic.com/s/oswald/v35/TK3iWkUHHAIjg752GT8G.woff2" as="font" crossorigin>
@@ -33,7 +34,7 @@
     </style>
 
     <!--TITLE-->
-    <title>Take 2</title>
+    <title>Body Muscles</title>
 
     <!--FONT-AWESOME ICON KIT-->
     <script src="https://kit.fontawesome.com/d5cd0f3f82.js" crossorigin="anonymous"></script>
@@ -46,12 +47,16 @@
 <body>
     <div class="wrapper">
         <div class="cards-container">
-            <div class="card arm-card">
-                <div class="heading">
-                    <h1>Arm</h1>
-                    <h1><i class="fas fa-angle-down"></i></h1>
-                </div>
-                <div class="details">
+            <div class="heads">
+                <div class="head-card arm-h"><h1>Arms</h1></div>
+                <div class="head-card abs-h"><h1>Abdomen</h1></div>
+                <div class="head-card back-h"><h1>Back</h1></div>
+                <div class="head-card glutes-h"><h1>Glutes</h1></div>
+                <div class="head-card leg-h"><h1>Leg</h1></div>
+            </div>
+            
+            <div class="details">
+                <div class="details-card arm-card">
                     <div class="d d1">
                         <h3>Biceps</h3>
                         <p>Aids the flexion of the elbow and rotation of the forearm</p>
@@ -67,13 +72,7 @@
                             bones</p>
                     </div>
                 </div>
-            </div>
-            <div class="card abs-card">
-                <div class="heading">
-                    <h1>Abdomen</h1>
-                    <h1><i class="fas fa-angle-down"></i></h1>
-                </div>
-                <div class="details">
+                <div class="details-card abs-card">
                     <div class="d d1">
                         <h3>Transversus Abdominis</h3>
                         <p>Most profound muscle and it tremendously affects body posture as it holds up the spine
@@ -94,13 +93,7 @@
                             responsible for creating the six-pack figure and provide the body's posture</p>
                     </div>
                 </div>
-            </div>
-            <div class="card back-card">
-                <div class="heading">
-                    <h1>Back</h1>
-                    <h1><i class="fas fa-angle-down"></i></h1>
-                </div>
-                <div class="details">
+                <div class="details-card back-card">
                     <div class="d d1">
                         <h3>Trapezius</h3>
                         <p>Also known as traps, are the muscles that connect the deltoids to the back. Aids in the
@@ -122,25 +115,13 @@
                         <p>Also known as lower back, aid in stabilizing the spine and core muscles</p>
                     </div>
                 </div>
-            </div>
-            <div class="card glutes-card">
-                <div class="heading">
-                    <h1>Glutes</h1>
-                    <h1><i class="fas fa-angle-down"></i></h1>
-                </div>
-                <div class="details">
+                <div class="details-card glutes-card">
                     <div class="d d1">
                         <p>Glutes are one of the biggest muscle groups in the body. They help keep the pelvis in a
                             stabilized position and provide aid to rotate and extend the hip</p>
                     </div>
                 </div>
-            </div>
-            <div class="card leg-card">
-                <div class="heading">
-                    <h1>Legs</h1>
-                    <h1><i class="fas fa-angle-down"></i></h1>
-                </div>
-                <div class="details">
+                <div class="details-card leg-card">
                     <div class="d d1">
                         <h3>Quadriceps</h3>
                         <p>Allow for the extension of the leg and knee along with the flexion of the thigh and knee
@@ -158,6 +139,7 @@
                 </div>
             </div>
         </div>
+
         <div class="images">
             <img src="./images/front (1).png" alt="front">
         </div>
