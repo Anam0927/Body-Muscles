@@ -13,7 +13,7 @@ Most importantly though, I ***learnt*** a lot! <ins>Experience</ins> is what I g
 
 ***
 
-My first attempt at the project is at [here]https://anam0927.github.io/Muscles-of-the-Body).
+My first attempt at the project is at *[here](https://anam0927.github.io/Muscles-of-the-Body)*.
 There are a number of problems with this:  
 
 1. #### Color Palette ####
