@@ -1,9 +1,8 @@
 # Muscles of the Body - A Log Diary #
 
->*The harder you work for something, the greater you'll feel when you achieve it.*
-
-***
 ## Log 1 - Beginning from an End ##
+
+>*The harder you work for something, the greater you'll feel when you achieve it.*
 
 I got this project as a freelancer on Fiverr. On paper, it sounds pretty simple. Just make it so that different muscle groups of a human body get highlighted on hover and also, show some details related to it. 
 
