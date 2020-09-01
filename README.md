@@ -37,7 +37,7 @@ There are a number of problems with this:
 
 4. #### Code Documentation ####
 
-   Finally, documentation! I initially thought that I'll document my code after I complete the project. 
+   Finally, *documentation*! I initially thought that I'll document my code after I complete the project. 
    
    ***Big Mistake!***  
    
