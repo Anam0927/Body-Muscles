@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  color: #f4f6f4;
+  background-color: #281e30;
+  font-family: 'Oswald', sans-serif;
+}
+
+body .wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: 20% 80%;
+      grid-template-rows: 20% 80%;
+      grid-template-areas: "c c c c c" "i1 i2 i3 i4 i5";
+}
+
+body .wrapper .images {
+  width: 100%;
+}
+
+body .wrapper .images:nth-child(1) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: i1;
+}
+
+body .wrapper .images:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: i2;
+}
+
+body .wrapper .images:nth-child(3) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: i3;
+}
+
+body .wrapper .images:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: i4;
+}
+
+body .wrapper .images:nth-child(5) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: i5;
+}
+
+body .wrapper .images img {
+  max-width: 100%;
+}
+
+body .wrapper .cards-container {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: c;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+}
+/*# sourceMappingURL=main.css.map */
