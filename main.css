@@ -33,7 +33,8 @@ body .wrapper {
       grid-template-columns: repeat(5, 1fr);
   -ms-grid-rows: 10% 80%;
       grid-template-rows: 10% 80%;
-      grid-template-areas: "c c c c c" "i1 i2 i3 i4 i5";
+      grid-template-areas: "c c c c c"
+ "i1 i2 i3 i4 i5";
 }
 
 body .wrapper .images {
@@ -73,6 +74,7 @@ body .wrapper .images:nth-child(5) {
 
 body .wrapper .images img {
   height: 100%;
+  opacity: 0;
 }
 
 body .wrapper .cards-container {
