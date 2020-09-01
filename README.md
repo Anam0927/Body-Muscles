@@ -19,27 +19,25 @@ There are a number of problems with this:
 
    I'm not sure why I wanted to use this color palette, but I did. It feels a little dull though.
    
-   -<ins>**Lesson Learnt**</ins>: Decide at least a couple of color palette beforehand rather than trying various palettes during actual coding. It only diverts attention and wastes a lot of time.
+   - <ins>**Lesson Learnt**</ins>: Decide at least a couple of color palette beforehand rather than trying various palettes during actual coding. It only diverts attention and wastes a lot of time.
 
 2. #### UI ####
   
    Although the idea of having a side menu was nice, I think I can do better. I'm still thinking of various layouts (maybe a top menu, or a slide-in menu?), but I'd like to change the current one.
 
-   -<ins>**Lesson Learnt**</ins>: 
-    
-    ***WIREFRAME!***
+   - <ins>**Lesson Learnt**</ins>: ***WIREFRAME!***
 
 3. #### Responsiveness ####
 
    With my current code, I can't seem to make it responsive easily. Basically, that means my code could've been more simple. That's what I'm aiming for now!
 
-   -<ins>**Lesson Learnt**</ins>: Write simpler code.
+   - <ins>**Lesson Learnt**</ins>: Write simpler code.
 
 4. #### Code Documentation ####
 
    Finally, *documentation*! I initially thought that I'll document my code after I complete the project. 
    
-   ***Big Mistake!***  
+   *Big Mistake!*  
    
    Documentation makes debugging easier and also, updation. Although I had read these facts before, I foolishly ignored it. Not gonna do that anymore!  
    
