@@ -27,7 +27,7 @@ There are a number of problems with this:
 
    -<ins>**Lesson Learnt**</ins>: 
     
-    #### *WIREFRAME!* ####
+    ***WIREFRAME!***
 
 3. #### Responsiveness ####
 
@@ -43,6 +43,6 @@ There are a number of problems with this:
    
    Documentation makes debugging easier and also, updation. Although I had read these facts before, I foolishly ignored it. Not gonna do that anymore!  
    
-   #### *Comments, here I come!* ####
+   ***Comments, here I come!***
 
 That's it for now! Let's see how the second version turn out to be!
