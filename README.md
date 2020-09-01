@@ -28,7 +28,7 @@ There are a number of problems with this:
 
    -<ins>**Lesson Learnt**</ins>: 
     
-    ##### *WIREFRAME!* #####
+    #### *WIREFRAME!* ####
 
 3. #### Responsiveness ####
 
@@ -38,9 +38,12 @@ There are a number of problems with this:
 
 4. #### Code Documentation ####
 
-   Finally, documentation! I initially thought that I'll document my code after I complete the project.  
+   Finally, documentation! I initially thought that I'll document my code after I complete the project. 
+   
    ***Big Mistake!***  
+   
    Documentation makes debugging easier and also, updation. Although I had read these facts before, I foolishly ignored it. Not gonna do that anymore!  
-   ***Comments, here I come!***
+   
+   #### *Comments, here I come!* ####
 
 That's it for now! Let's see how the second version turn out to be!
