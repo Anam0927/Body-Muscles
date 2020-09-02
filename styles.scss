@@ -1,3 +1,6 @@
+$black: #000000;
+$whitish: #f2f2f2;
+
 * {
     margin: 0;
     padding: 0;
@@ -11,14 +14,23 @@ body {
     justify-content: center;
     min-height: 100vh;
 
+    font-family: "Oswald", sans-serif;
+
     .wrapper {
         padding: 30px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-template-areas: 
-            "i1 i2 c i3 i4";
+        display: flex;
+        max-width: 100vw;
+        overflow: hidden;
+
+        div {
+            flex: 1;
+        }
 
         .images {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             @for $i from 2 through 5 {
                 &:nth-child(#{$i}) {
@@ -26,15 +38,53 @@ body {
                 }
             }
 
-            width: 100%;
-
             img {
-                max-height: 100%;
+                max-height: calc(90vh - 60px);
+                max-width: calc((100vw - 60px) / 6);
             }
         }
 
         .cards-container {
             grid-area: c;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            max-height: calc(90vh - 60px);
+            // justify-content: space-around;
+
+            .card {
+                padding: 20px;
+                flex: 1;
+
+                background: $black;
+                color: $whitish;
+                border: 1px solid $whitish;
+
+                display: flex;
+                flex-direction: column;
+                
+                .head {
+                    margin-bottom: 20px;
+                    display: flex;
+
+                    .title {
+                        flex: 4;
+                    }
+
+                    .icon {
+                        flex: 1;
+                    }
+                }
+
+                .details {
+
+                    .d {
+                        margin: 10px 0;
+                    }
+                }
+            }
         }
     }
 }

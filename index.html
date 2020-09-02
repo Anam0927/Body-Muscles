@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    
+
     <!-- META TAGS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
             font-style: normal;
             font-weight: 700;
             font-display: swap;
-            src: local('Oswald Regular'), local('Oswald Regular'),  url(https://fonts.gstatic.com/s/oswald/v35/TK3iWkUHHAIjg752GT8G.woff2) format('woff2');
+            src: local('Oswald Regular'), local('Oswald Regular'), url(https://fonts.gstatic.com/s/oswald/v35/TK3iWkUHHAIjg752GT8G.woff2) format('woff2');
             unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
         }
     </style>
@@ -46,25 +46,43 @@
 
 <body>
     <div class="wrapper">
+
+        <div class="images">
+            <img src="./images/front (1).png" alt="front">
+        </div>
+        <div class="images">
+            <img src="./images/back (1).png" alt="front">
+        </div>
+        <div class="images">
+            <img src="./images/side (1).png" alt="front">
+        </div>
+        <div class="images">
+            <img src="./images/side front (1).png" alt="front">
+        </div>
+        <div class="images">
+            <img src="./images/side back (1).png" alt="front">
+        </div>
+
         <div class="cards-container">
-            <div class="heads">
-                <div class="head-card arm-h"><h1>Arms</h1></div>
-                <div class="head-card abs-h"><h1>Abdomen</h1></div>
-                <div class="head-card back-h"><h1>Back</h1></div>
-                <div class="head-card glutes-h"><h1>Glutes</h1></div>
-                <div class="head-card leg-h"><h1>Leg</h1></div>
-            </div>
-            
-            <!-- <div class="details">
-                <div class="details-card arm-card">
+
+            <div class="card arm-card">
+                <div class="head">
+                    <div class="title">
+                        <h1>Arms</h1>
+                    </div>
+                    <div class="icon">
+                        <h1><i class="fas fa-angle-down"></i></h1>
+                    </div>
+                </div>
+                <div class="details">
                     <div class="d d1">
                         <h3>Biceps</h3>
                         <p>Aids the flexion of the elbow and rotation of the forearm</p>
                     </div>
                     <div class="d d2">
                         <h3>Triceps</h3>
-                        <p>Aids the extension of the forearm using the elbow joint and adduction of the arm using
-                            the shoulder joints</p>
+                        <p>Aids the extension of the forearm using the elbow joint and adduction of the arm using the
+                            shoulder joints</p>
                     </div>
                     <div class="d d3">
                         <h3>Forearm</h3>
@@ -72,11 +90,21 @@
                             bones</p>
                     </div>
                 </div>
-                <div class="details-card abs-card">
+            </div>
+
+            <div class="card abs-card">
+                <div class="head">
+                    <div class="title">
+                        <h1>Abdomen</h1>
+                    </div>
+                    <div class="icon">
+                        <h1><i class="fas fa-angle-down"></i></h1>
+                    </div>
+                </div>
+                <div class="details">
                     <div class="d d1">
                         <h3>Transversus Abdominis</h3>
-                        <p>Most profound muscle and it tremendously affects body posture as it holds up the spine
-                        </p>
+                        <p>Most profound muscle and it tremendously affects body posture as it holds up the spine</p>
                     </div>
                     <div class="d d2">
                         <h3>Internal Obliques</h3>
@@ -93,7 +121,18 @@
                             responsible for creating the six-pack figure and provide the body's posture</p>
                     </div>
                 </div>
-                <div class="details-card back-card">
+            </div>
+
+            <div class="card back-card">
+                <div class="head">
+                    <div class="title">
+                        <h1>Back</h1>
+                    </div>
+                    <div class="icon">
+                        <h1><i class="fas fa-angle-down"></i></h1>
+                    </div>
+                </div>
+                <div class="details">
                     <div class="d d1">
                         <h3>Trapezius</h3>
                         <p>Also known as traps, are the muscles that connect the deltoids to the back. Aids in the
@@ -107,53 +146,59 @@
                     </div>
                     <div class="d d3">
                         <h3>Latissimus Dorsi</h3>
-                        <p>Also known as Lats, helps with the pulling up and pulling down movement of the arm and
-                            back, having the elbow remain close to the body</p>
+                        <p>Also known as Lats, helps with the pulling up and pulling down movement of the arm and back,
+                            having the elbow remain close to the body</p>
                     </div>
                     <div class="d d4">
                         <h3>Erector Spinae</h3>
                         <p>Also known as lower back, aid in stabilizing the spine and core muscles</p>
                     </div>
                 </div>
-                <div class="details-card glutes-card">
+            </div>
+
+            <div class="card glutes-card">
+                <div class="head">
+                    <div class="title">
+                        <h1>Glutes</h1>
+                    </div>
+                    <div class="icon">
+                        <h1><i class="fas fa-angle-down"></i></h1>
+                    </div>
+                </div>
+                <div class="details">
                     <div class="d d1">
                         <p>Glutes are one of the biggest muscle groups in the body. They help keep the pelvis in a
                             stabilized position and provide aid to rotate and extend the hip</p>
                     </div>
                 </div>
-                <div class="details-card leg-card">
+            </div>
+
+            <div class="card leg-card">
+                <div class="head">
+                    <div class="title">
+                        <h1>Legs</h1>
+                    </div>
+                    <div class="icon">
+                        <h1><i class="fas fa-angle-down"></i></h1>
+                    </div>
+                </div>
+                <div class="details">
                     <div class="d d1">
                         <h3>Quadriceps</h3>
-                        <p>Allow for the extension of the leg and knee along with the flexion of the thigh and knee
-                        </p>
+                        <p>Allow for the extension of the leg and knee along with the flexion of the thigh and knee</p>
                     </div>
                     <div class="d d2">
                         <h3>Hamstrings</h3>
-                        <p>Aid the movement of the lower body through the hip. Permits the flexion of the knee and
-                            keeps the hamstrings and pelvis stabilized</p>
+                        <p>Aid the movement of the lower body through the hip. Permits the flexion of the knee and keeps
+                            the hamstrings and pelvis stabilized</p>
                     </div>
                     <div class="d d3">
                         <h3>Calves</h3>
                         <p>Aids in the lifting movement of the heels</p>
                     </div>
                 </div>
-            </div> -->
-        </div>
+            </div>
 
-        <div class="images">
-            <img src="./images/front (1).png" alt="front">
-        </div>
-        <div class="images">
-            <img src="./images/back (1).png" alt="front">
-        </div>
-        <div class="images">
-            <img src="./images/side front (1).png" alt="front">
-        </div>
-        <!-- <div class="images">
-            <img src="./images/side (1).png" alt="front">
-        </div> -->
-        <div class="images">
-            <img src="./images/side back (1).png" alt="front">
         </div>
     </div>
 </body>
