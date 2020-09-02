@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    .wrapper {
+        padding: 30px;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+            "i1 i2 c i3 i4";
+
+        .images {
+
+            @for $i from 2 through 5 {
+                &:nth-child(#{$i}) {
+                    grid-area: i#{$i - 1};
+                }
+            }
+
+            width: 100%;
+
+            img {
+                max-height: 100%;
+            }
+        }
+
+        .cards-container {
+            grid-area: c;
+        }
+    }
+}
