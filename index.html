@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://kit.fontawesome.com/d5cd0f3f82.js" crossorigin="">
 
     <!-- FONT PRELOAD -->
+    <!-- TODO : Preload Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="preload" href="https://fonts.gstatic.com/s/oswald/v35/TK3iWkUHHAIjg752GT8G.woff2" as="font" crossorigin>
     <style>
         @font-face {
@@ -33,38 +35,60 @@
         }
     </style>
 
-    <!--TITLE-->
+    <!-- TITLE -->
     <title>Body Muscles</title>
 
-    <!--FONT-AWESOME ICON KIT-->
+    <!-- FONT-AWESOME ICON KIT -->
     <script src="https://kit.fontawesome.com/d5cd0f3f82.js" crossorigin="anonymous"></script>
 
-    <!--PERSONAL STYLESHEET-->
+    <!-- PERSONAL STYLESHEET -->
     <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
+
+    <!-- : wrapper that contains all elements -->
     <div class="wrapper">
 
+        <!-- : Desktop images (will load only if max-width > 992px) -->
+
+        <!-- Front image -->
         <div class="images">
-            <img src="./images/front (1).png" alt="front">
+            <img srcset="./images/front (1) - Copy.png 400w,
+                        ./images/front (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/front (1) - Copy.png" alt="Front">
         </div>
+        <!-- Back image -->
         <div class="images">
-            <img src="./images/back (1).png" alt="front">
+            <img srcset="./images/back (1) - Copy.png 400w,
+                        ./images/back (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/back (1) - Copy.png" alt="Front">
         </div>
+        <!-- Side Front -->
         <div class="images">
-            <img src="./images/side (1).png" alt="front">
+            <img srcset="./images/side front (1) - Copy.png 400w,
+                        ./images/side front (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/side front (1) - Copy.png" alt="Front">
         </div>
+        <!-- Side Back -->
         <div class="images">
-            <img src="./images/side front (1).png" alt="front">
+            <img srcset="./images/side back (1) - Copy.png 400w,
+                        ./images/side back (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/side back (1) - Copy.png" alt="Front">
         </div>
+        <!-- Side -->
         <div class="images">
-            <img src="./images/side back (1).png" alt="front">
+            <img srcset="./images/side (1) - Copy.png 400w,
+                        ./images/side (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/side (1) - Copy.png" alt="Front">
         </div>
+
+        <!-- : Menu -->
 
         <div class="cards-container">
 
+            <!-- -- Arms card -->
             <div class="card arm-card">
                 <div class="head">
                     <div class="title">
@@ -91,7 +115,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- -- Abdomen card -->
             <div class="card abs-card">
                 <div class="head">
                     <div class="title">
@@ -122,7 +146,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- -- Back card -->
             <div class="card back-card">
                 <div class="head">
                     <div class="title">
@@ -155,7 +179,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- -- Glutes card -->
             <div class="card glutes-card">
                 <div class="head">
                     <div class="title">
@@ -172,7 +196,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- -- Legs card -->
             <div class="card leg-card">
                 <div class="head">
                     <div class="title">
@@ -200,6 +224,68 @@
             </div>
 
         </div>
+
+        <!-- : Carousel (mobile only) -->
+
+        <!-- -- Carousel Wrapper -->
+        <div class="carousel">
+
+            <!-- button -->
+            <button class="carousel__button nextButton"><i class="fas fa-chevron-right"></i></button>
+
+            <!-- -- actual pics come up in this -->
+
+            <div class="carousel__track-container">
+
+                <ul class="carousel__track">
+                    <!-- front image -->
+                    <li class="carousel__slide">
+                        <img srcset="./images/front (1) - Copy.png 400w,
+                                        ./images/front (1).png 200w" sizes="(min-width: 992px) 400px, 
+                                        200px" src="./images/front (1) - Copy.png" alt="Front">
+                    </li>
+                    <!-- back image -->
+                    <li class="carousel__slide">
+                        <img srcset="./images/back (1) - Copy.png 400w,
+                                    ./images/back (1).png 200w" sizes="(min-width: 992px) 400px, 
+                                    200px" src="./images/back (1) - Copy.png" alt="Front">
+                    </li>
+                    <!-- side front -->
+                    <li class="carousel__slide">
+                        <img srcset="./images/side front (1) - Copy.png 400w,
+                        ./images/side front (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/side front (1) - Copy.png" alt="Front">
+                    </li>
+                    <!-- side Back -->
+                    <li class="carousel__slide">
+                        <img srcset="./images/side back (1) - Copy.png 400w,
+                        ./images/side back (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/side back (1) - Copy.png" alt="Front">
+                    </li>
+                    <!-- side  -->
+                    <li class="carousel__slide">
+                        <img srcset="./images/side (1) - Copy.png 400w,
+                        ./images/side (1).png 200w" sizes="(min-width: 992px) 400px, 
+                        200px" src="./images/side (1) - Copy.png" alt="Front">
+                    </li>
+                </ul>
+
+            </div>
+
+            <!-- button -->
+            <button class="carousel__button prevButton"><i class="fas fa-chevron-left"></i></button>
+
+            <!-- indicator -->
+            <div class="carousel__nav">
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+            </div>
+
+        </div>
+
     </div>
 </body>
 
