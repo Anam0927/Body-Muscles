@@ -3,6 +3,14 @@
   padding: 0;
 }
 
+.big-lines {
+  position: absolute;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  opacity: 0.25;
+}
+
 .carousel {
   display: none;
 }
@@ -124,38 +132,21 @@ body .wrapper .cards-container .card .details {
   opacity: 0;
 }
 
-body .wrapper .cards-container .card .card-design {
-  z-index: 1;
-  width: 100%;
-  height: 100%;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  background: #ffffff;
-  opacity: 0.3;
+body .wrapper .cards-container .card .small-lines {
+  position: absolute;
+  z-index: -1;
+  bottom: -40%;
+  left: -30%;
+  -webkit-transform: scale(0.75);
+          transform: scale(0.75);
 }
 
-body .wrapper .cards-container .card .card-design .line1 {
-  height: 0;
-  width: 100%;
-  border: 2px solid #ff4a4a;
-  border-radius: 4px;
-  opacity: 0.5;
-  -webkit-transform: rotate(-28.73deg);
-          transform: rotate(-28.73deg);
-  position: absolute;
-  left: -60%;
-  bottom: 20%;
-}
-
-body .wrapper .cards-container .card .card-design .line2 {
-  height: 0;
-  width: 50%;
-  border: 2px solid #ff4a4a;
-  border-radius: 4px;
-  opacity: 0.3;
-  -webkit-transform: rotate(-28.73deg);
-          transform: rotate(-28.73deg);
-  position: absolute;
+@media screen and (max-width: 768px) {
+  .images {
+    display: none;
+  }
+  .carousel {
+    display: block;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
