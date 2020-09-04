@@ -10,6 +10,7 @@ $blue: #0077b6;
 * {
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 // ! DESKTOP STYLES (mostly)
@@ -264,7 +265,7 @@ body {
 
                     .small-lines {
                         transform: scale(0.5);
-                        bottom: 0;
+                        bottom: 100%;
                         left: 0;
                         right: 0;
                         top: 0;
@@ -285,6 +286,7 @@ body {
                     height: 100%;
                     width: 100%;
                     position: relative;
+                    overflow: hidden;
 
                     // -- check
                     ////background-color: darkolivegreen;
@@ -293,6 +295,9 @@ body {
                         list-style: none;
                         height: 100%;
                         width: 100%;
+                        position: relative;
+
+                        transition: transform 500ms ease-in-out;
 
                         // -- check 
                         ////background-color: darkorchid;
@@ -301,6 +306,12 @@ body {
 
                             height: 100%;
                             width: 100%;
+                            opacity: 0;
+                            transition: opacity 400ms ease-in-out;
+
+                            &.current__slide {
+                                opacity: 1;
+                            }
 
                             // -- check
                             ////background-color: deeppink;
@@ -323,8 +334,18 @@ body {
 
                 .carousel__button {
 
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    // -- button properties
                     cursor: pointer;
 
+                    &:focus {
+                        box-shadow: 0 1px 2px -1px $red;
+                    }
+
+                    // -- general positioning
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%); // -- to middle it perfectly
@@ -346,6 +367,10 @@ body {
                         right: 0;
                         z-index: 1;
                     }
+
+                    &.is-hidden {
+                        display: none;
+                    }
                 }
 
                 .carousel__nav {
@@ -362,8 +387,11 @@ body {
                         border: 0;
                         background-color: rgba(0, 0, 0, 0.3);
                         width: 20px;
-                        height: 3px;
+                        height: 5px;
                         margin: 0 2px;
+                        cursor: pointer;
+                        z-index: 1;
+                        transition: all 250ms ease-in-out;
 
                         &.current__slide {
                             background-color: $red;
