@@ -119,7 +119,6 @@ body {
 
                 // : for design components
                 position: relative;
-                z-index: 0;
                 
                 // -- styles
                 padding: 0 20px;
@@ -141,7 +140,7 @@ body {
                     display: flex;  // -- to make title and icon show up in the same row
                     align-items: center;
 
-                    z-index: 2;
+                    z-index: 1;
 
                     // -- check
                     ////background-color: goldenrod;
@@ -163,7 +162,7 @@ body {
 
                 // : initially all details are hidden
                 .details {
-                    z-index: 2;
+                    z-index: 1;
                     height: 0;
                     font-size: 0;
                     padding: 0;
@@ -174,7 +173,7 @@ body {
                 // : design lines
                 .small-lines {
                     position: absolute;
-                    z-index: -1;
+                    z-index: 0;
                     bottom: -40%;
                     left: -30%;
                     transform: scale(0.75);
@@ -187,9 +186,11 @@ body {
 
 }
 
-@media screen and (max-width: 768px) {
+// ! TABLET STYLES
 
-    //: normal images are hidden in tablet mode
+@media screen and (max-width: 992px) {
+
+    //: normal images are hidden in tablet mode and instead, carousel comes up
     .images {
         display: none;
     }
@@ -199,6 +200,86 @@ body {
     }
 
     body {
+
+        font-size: 16px;
+
+        h1 {
+            font-size: 23px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        height: 100vh; // : To align-center wrapper
+        max-width: 100vw; // : To avoid content overflow
+        ////overflow: hidden;
+
+        margin: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // -- Check
+        ////background: rgb(197, 108, 108);
+
+        .wrapper {
+
+            height: 90vh;
+            width: 70vw;
+
+            margin: 5vh 10vh;
+
+            // -- Check
+            ////background-color: rgb(134, 177, 65);
+
+            // : Layout for tablets and mobiles
+            grid-template-columns: 100%;
+            grid-template-rows: 1fr, 1fr;
+            ////align-items: center;
+            justify-content: center;
+
+            // -- temp
+            overflow:hidden;
+            img {
+                height: calc(0.7 * 90vh);
+            }
+
+            // : Menu
+            .cards-container {
+
+                height: 100%;
+                min-width: 60%;
+                margin: 0 auto;
+
+                .card {
+
+                    .small-lines {
+                        transform: scale(0.15);
+                        bottom: 0;
+                        left: -50%;
+                        right: 0;
+                        top: -80%;
+                    }
+                }
+            }    
+            
+            .carousel {
+                margin: 0 auto;
+
+                .carousel__track-container {
+                    // -- check
+                    background-color: khaki;
+
+                    .carousel__track {
+                        // -- check
+                        background-color: lavender;
+                    }
+                }
+            }
+
+        }
 
     }
 

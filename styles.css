@@ -83,7 +83,6 @@ body .wrapper .cards-container .card {
           box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  z-index: 0;
   padding: 0 20px;
   height: 20%;
   background: #000000;
@@ -106,7 +105,7 @@ body .wrapper .cards-container .card .head {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 2;
+  z-index: 1;
 }
 
 body .wrapper .cards-container .card .head .title {
@@ -124,7 +123,7 @@ body .wrapper .cards-container .card .head .icon {
 }
 
 body .wrapper .cards-container .card .details {
-  z-index: 2;
+  z-index: 1;
   height: 0;
   font-size: 0;
   padding: 0;
@@ -134,19 +133,78 @@ body .wrapper .cards-container .card .details {
 
 body .wrapper .cards-container .card .small-lines {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   bottom: -40%;
   left: -30%;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .images {
     display: none;
   }
   .carousel {
     display: block;
+  }
+  body {
+    font-size: 16px;
+    height: 100vh;
+    max-width: 100vw;
+    margin: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body h1 {
+    font-size: 23px;
+  }
+  body h3 {
+    font-size: 18px;
+  }
+  body .wrapper {
+    height: 90vh;
+    width: 70vw;
+    margin: 5vh 10vh;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+    -ms-grid-rows: 1fr, 1fr;
+        grid-template-rows: 1fr, 1fr;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    overflow: hidden;
+  }
+  body .wrapper img {
+    height: calc(0.7 * 90vh);
+  }
+  body .wrapper .cards-container {
+    height: 100%;
+    min-width: 60%;
+    margin: 0 auto;
+  }
+  body .wrapper .cards-container .card .small-lines {
+    -webkit-transform: scale(0.15);
+            transform: scale(0.15);
+    bottom: 0;
+    left: -50%;
+    right: 0;
+    top: -80%;
+  }
+  body .wrapper .carousel {
+    margin: 0 auto;
+  }
+  body .wrapper .carousel .carousel__track-container {
+    background-color: khaki;
+  }
+  body .wrapper .carousel .carousel__track-container .carousel__track {
+    background-color: lavender;
   }
 }
 /*# sourceMappingURL=styles.css.map */
