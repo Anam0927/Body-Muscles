@@ -364,7 +364,7 @@
         <div class="carousel">
 
             <!-- button -->
-            <button class="carousel__button nextButton"><i class="fas fa-chevron-right"></i></button>
+            <button class="carousel__button carousel__button--right"><i class="fas fa-chevron-right"></i></button>
 
             
             <!-- -- actual pics come up in this -->
@@ -372,35 +372,35 @@
 
                 <ul class="carousel__track">
                     <!-- front image -->
-                    <li class="carousel__slide">
-                        <img src="./images/front.png" alt="Front" usemap="#image-map1" class="map">
+                    <li class="carousel__slide current__slide">
+                        <img class="carousel__image" src="./images/front.png" alt="Front" usemap="#image-map1" class="map">
                     </li>
                     <!-- back image -->
                     <li class="carousel__slide">
-                        <img src="./images/back.png" alt="Back" usemap="#image-map2" class="map">
+                        <img class="carousel__image" src="./images/back.png" alt="Back" usemap="#image-map2" class="map">
                     </li>
                     <!-- side front -->
                     <li class="carousel__slide">
-                        <img src="./images/side_front.png" alt="Side Front" usemap="#image-map3" class="map">
+                        <img class="carousel__image" src="./images/side_front.png" alt="Side Front" usemap="#image-map3" class="map">
                     </li>
                     <!-- side Back -->
                     <li class="carousel__slide">
-                        <img src="./images/side_back.png" alt="Side Back" usemap="#image-map4" class="map">
+                        <img class="carousel__image" src="./images/side_back.png" alt="Side Back" usemap="#image-map4" class="map">
                     </li>
                     <!-- side  -->
                     <li class="carousel__slide">
-                        <img src="./images/side.png" alt="Side" usemap="#image-map5" class="map">
+                        <img class="carousel__image" src="./images/side.png" alt="Side" usemap="#image-map5" class="map">
                     </li>
                 </ul>
 
             </div>
 
             <!-- button -->
-            <button class="carousel__button prevButton"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel__button carousel__button--left"><i class="fas fa-chevron-left"></i></button>
 
             <!-- indicator -->
             <div class="carousel__nav">
-                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator current__slide"></button>
                 <button class="carousel__indicator"></button>
                 <button class="carousel__indicator"></button>
                 <button class="carousel__indicator"></button>

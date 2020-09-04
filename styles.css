@@ -141,6 +141,13 @@ body .wrapper .cards-container .card .small-lines {
 }
 
 @media screen and (max-width: 992px) {
+  .big-lines {
+    position: absolute;
+    z-index: -1;
+    bottom: -20%;
+    left: -40%;
+    opacity: 0.25;
+  }
   .images {
     display: none;
   }
@@ -151,6 +158,7 @@ body .wrapper .cards-container .card .small-lines {
     font-size: 16px;
     height: 100vh;
     max-width: 100vw;
+    overflow: hidden;
     margin: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -170,41 +178,110 @@ body .wrapper .cards-container .card .small-lines {
   }
   body .wrapper {
     height: 90vh;
-    width: 70vw;
+    width: 80vw;
     margin: 5vh 10vh;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-    -ms-grid-rows: 1fr, 1fr;
-        grid-template-rows: 1fr, 1fr;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  body .wrapper .cards-container {
+    height: 30%;
+    min-width: 60%;
+    margin: 0 auto 5vh auto;
+  }
+  body .wrapper .cards-container .card .small-lines {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  body .wrapper .carousel {
+    height: calc(70% - 5vh);
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+  }
+  body .wrapper .carousel .carousel__track-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  body .wrapper .carousel .carousel__track-container .carousel__track {
+    list-style: none;
+    height: 100%;
+    width: 100%;
+  }
+  body .wrapper .carousel .carousel__track-container .carousel__track .carousel__slide {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    overflow: hidden;
-  }
-  body .wrapper img {
-    height: calc(0.7 * 90vh);
-  }
-  body .wrapper .cards-container {
-    height: 100%;
-    min-width: 60%;
-    margin: 0 auto;
-  }
-  body .wrapper .cards-container .card .small-lines {
-    -webkit-transform: scale(0.15);
-            transform: scale(0.15);
+    position: absolute;
+    top: 0;
     bottom: 0;
-    left: -50%;
+  }
+  body .wrapper .carousel .carousel__track-container .carousel__track .carousel__slide .carousel__image {
+    max-height: calc(0.7 * 90vh - 5vh);
+  }
+  body .wrapper .carousel .carousel__button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+    color: #ff4a4a;
+  }
+  body .wrapper .carousel .carousel__button--left {
+    left: 0;
+  }
+  body .wrapper .carousel .carousel__button--right {
     right: 0;
-    top: -80%;
+    z-index: 1;
   }
-  body .wrapper .carousel {
-    margin: 0 auto;
+  body .wrapper .carousel .carousel__nav {
+    padding-top: 10px;
+    padding-left: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  body .wrapper .carousel .carousel__track-container {
-    background-color: khaki;
+  body .wrapper .carousel .carousel__nav .carousel__indicator {
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 20px;
+    height: 3px;
+    margin: 0 2px;
   }
-  body .wrapper .carousel .carousel__track-container .carousel__track {
-    background-color: lavender;
+  body .wrapper .carousel .carousel__nav .carousel__indicator.current__slide {
+    background-color: #ff4a4a;
   }
 }
 /*# sourceMappingURL=styles.css.map */
