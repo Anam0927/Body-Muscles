@@ -1,7 +1,7 @@
 // -- Maphilight options
 $.fn.maphilight.defaults = {
     fill: true,
-    fillColor: '0077B60',
+    fillColor: '0077B6',
     fillOpacity: 0.5,
     stroke: false,
     strokeColor: '153243',
@@ -25,7 +25,8 @@ $.fn.maphilight.defaults = {
 $(document).ready(() => {
 
     // -- image map plug-ins
-    $('.map').rwdImageMaps().maphilight();
+    $('img[usemap]').rwdImageMaps();
+    $('img[usemap]').maphilight()
 
     // -- make heading align center when cards are not expanded
     const heightOfCard = $('.card').height() + 'px';
