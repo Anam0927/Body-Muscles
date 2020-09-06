@@ -22,10 +22,10 @@ $.fn.maphilight.defaults = {
     shadowFrom: false
 }
 
-$(document).ready(() => {
+$(document).ready((e) => {
 
     // -- image map plug-ins
-    $('img[usemap]').rwdImageMaps();
+    $('img[usemap]).rwdImageMaps();
     $('img[usemap]').maphilight()
 
     // -- make heading align center when cards are not expanded
