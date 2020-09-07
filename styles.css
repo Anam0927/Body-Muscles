@@ -77,9 +77,6 @@ body .wrapper .cards-container {
 }
 
 body .wrapper .cards-container .card {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
@@ -89,14 +86,19 @@ body .wrapper .cards-container .card {
   background: #000000;
   color: #ffffff;
   border: 1px solid #ffffff;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  -ms-grid-rows: auto auto;
-      grid-template-rows: auto auto;
-  grid-auto-rows: -webkit-min-content;
-  grid-auto-rows: min-content;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  cursor: pointer;
+}
+
+body .wrapper .cards-container .card.expand {
+  height: 100%;
+}
+
+body .wrapper .cards-container .card.expand.overflow {
+  overflow-y: scroll;
 }
 
 body .wrapper .cards-container .card .head {
@@ -106,13 +108,14 @@ body .wrapper .cards-container .card .head {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  z-index: 1;
 }
 
 body .wrapper .cards-container .card .head .title {
   -webkit-box-flex: 4;
       -ms-flex: 4;
           flex: 4;
+  -webkit-transition: line-height 500ms ease-in-out;
+  transition: line-height 500ms ease-in-out;
 }
 
 body .wrapper .cards-container .card .head .icon {
@@ -121,24 +124,53 @@ body .wrapper .cards-container .card .head .icon {
           flex: 1;
   text-align: right;
   color: #ff4a4a;
+  -webkit-transition: -webkit-transform 500ms linear;
+  transition: -webkit-transform 500ms linear;
+  transition: transform 500ms linear;
+  transition: transform 500ms linear, -webkit-transform 500ms linear;
 }
 
 body .wrapper .cards-container .card .details {
-  z-index: 1;
-  height: 0;
-  font-size: 0;
-  padding: 0;
-  margin: 0;
   opacity: 0;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+
+body .wrapper .cards-container .card .details.expand {
+  opacity: 1;
 }
 
 body .wrapper .cards-container .card .small-lines {
   position: absolute;
-  z-index: 0;
   bottom: -40%;
   left: -30%;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
+}
+
+.display {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff4a4a;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 992px) {

@@ -25,26 +25,46 @@ $.fn.maphilight.defaults = {
 $(document).ready((e) => {
 
     // -- image map plug-ins
-    $('img[usemap]).rwdImageMaps();
-    $('img[usemap]').maphilight()
+    $('img[usemap]').rwdImageMaps();
+    $('img[usemap]').maphilight();
 
     // -- make heading align center when cards are not expanded
     const heightOfCard = $('.card').height() + 'px';
-    $('h1').css('line-height', heightOfCard);
+    $('.title').css('line-height', heightOfCard);
 
     // : Card interaction related code
+
+    // -- functions
+
+
+    // TODO - cards should expand and unexpand on click
+    $('.card').on('click', function () {
+        var trig = $(this);
+        if (trig.hasClass('expand')) {
+            trig.notExpand();
+        } else {
+            trig.expand();
+        }
+    });
+
+    // TODO - muscle part should be highlighted on card hover
+    // TODO - muscle part should stay highlighted when card is expanded
+    // TODO - cards should expand on click on muscle part
+
+    // : Card interaction related code - END
+
 
     // : Carousel related code
 
     // -- variables
-    const track = $('.carousel__track');    // * track wherein all slides will move
-    const slides = track.children();        // * gets an array of all (immediate) children of track, which are the individual slides
+    const track = $('.carousel__track'); // * track wherein all slides will move
+    const slides = track.children(); // * gets an array of all (immediate) children of track, which are the individual slides
     const nextButton = $('.carousel__button--right');
     const prevButton = $('.carousel__button--left');
-    const nav = $('.carousel__nav');        // * navigation bar
-    const bars = nav.children();            // * array containing individual bars of the navbar
-    
-    const slideSize = slides.width();       // * gets the width of one slide
+    const nav = $('.carousel__nav'); // * navigation bar
+    const bars = nav.children(); // * array containing individual bars of the navbar
+
+    const slideSize = slides.width(); // * gets the width of one slide
 
     // TODO - arrange the slides next to one another
     slides.each((index, slide) => {

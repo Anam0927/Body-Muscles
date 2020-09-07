@@ -114,7 +114,7 @@ body {
             .card {
 
                 // : to make the cards take up all the height available and distribute equally
-                flex: 1;
+                ////flex: 1;
 
                 // -- to avoid overflow
                 box-sizing: border-box;
@@ -123,36 +123,53 @@ body {
                 // : for design components
                 position: relative;
 
-                // -- styles
+                // : styles
                 padding: 0 20px;
                 height: 20%;
                 background: $black;
                 color: $white;
                 border: 1px solid $white;
 
-                // : to align header and details and give them appropriate heights
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: auto auto;
-                grid-auto-rows: min-content; // -- makes sure auto takes up only as much height as is required
+                // // : to align header and details and give them appropriate heights
+                // display: grid;
+                // grid-template-columns: 1fr;
+                // grid-template-rows: auto auto;
+                // grid-auto-rows: min-content; // -- makes sure each row takes up only as much height as is required
+
+                // -- transition
+                transition: all 0.5s ease-in-out;
+                transform-origin: top;
+
+                cursor: pointer;
 
                 // -- check 
                 // //background-color: wheat;
 
+                &.expand {
+                    height: 100%;
+
+                    &.overflow {
+                        overflow-y: scroll;
+                    }
+                }
+
                 .head {
                     display: flex; // -- to make title and icon show up in the same row
                     align-items: center;
-
-                    z-index: 1;
 
                     // -- check
                     ////background-color: goldenrod;
 
                     .title {
                         flex: 4;
+                        transition: line-height 500ms ease-in-out;
 
                         // -- check
                         ////background-color: greenyellow;
+
+                        // &.expand {
+                        //     line-height: 1;
+                        // }
                     }
 
                     .icon {
@@ -160,23 +177,29 @@ body {
                         text-align: right;
 
                         color: $red;
+
+                        transition: transform 500ms linear;
+
+                        // &.expand {
+                        //     transform: rotate(180deg);
+                        // }
                     }
                 }
 
                 // : initially all details are hidden
                 .details {
-                    z-index: 1;
-                    height: 0;
-                    font-size: 0;
-                    padding: 0;
-                    margin: 0;
                     opacity: 0;
+
+                    transition: all 1s ease-in-out;
+
+                    &.expand {
+                        opacity: 1;
+                    }
                 }
 
                 // : design lines
                 .small-lines {
                     position: absolute;
-                    z-index: 0;
                     bottom: -40%;
                     left: -30%;
                     transform: scale(0.75);
@@ -187,6 +210,31 @@ body {
 
     }
 
+}
+
+.display {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $red;
+    border-radius: 10px;
 }
 
 // ! TABLET STYLES
