@@ -77,27 +77,44 @@ body .wrapper .cards-container {
 }
 
 body .wrapper .cards-container .card {
+  z-index: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow: hidden;
   position: relative;
   padding: 0 20px;
-  height: 20%;
+  max-height: 20%;
+  min-height: 20%;
   background: #000000;
   color: #ffffff;
   border: 1px solid #ffffff;
+  cursor: pointer;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   -webkit-transform-origin: top;
           transform-origin: top;
-  cursor: pointer;
+  -webkit-transition-property: min-height, max-height, width, opacity, z-index, margin, padding, line-height;
+  transition-property: min-height, max-height, width, opacity, z-index, margin, padding, line-height;
 }
 
 body .wrapper .cards-container .card.expand {
-  height: 100%;
+  min-height: 100%;
+  padding-bottom: 20px;
 }
 
-body .wrapper .cards-container .card.expand.overflow {
+body .wrapper .cards-container .card.display {
+  min-height: 0;
+  max-height: 0;
+  width: 0;
+  opacity: 0;
+  z-index: -1;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+}
+
+body .wrapper .cards-container .card.overflowAllowed {
   overflow-y: scroll;
 }
 
@@ -116,6 +133,7 @@ body .wrapper .cards-container .card .head .title {
           flex: 4;
   -webkit-transition: line-height 500ms ease-in-out;
   transition: line-height 500ms ease-in-out;
+  z-index: 2;
 }
 
 body .wrapper .cards-container .card .head .icon {
@@ -123,6 +141,7 @@ body .wrapper .cards-container .card .head .icon {
       -ms-flex: 1;
           flex: 1;
   text-align: right;
+  z-index: 2;
   color: #ff4a4a;
   -webkit-transition: -webkit-transform 500ms linear;
   transition: -webkit-transform 500ms linear;
@@ -132,6 +151,7 @@ body .wrapper .cards-container .card .head .icon {
 
 body .wrapper .cards-container .card .details {
   opacity: 0;
+  z-index: 2;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -142,21 +162,20 @@ body .wrapper .cards-container .card .details.expand {
 
 body .wrapper .cards-container .card .small-lines {
   position: absolute;
+  z-index: 1;
   bottom: -40%;
   left: -30%;
   -webkit-transform: scale(0.75);
           transform: scale(0.75);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.display {
-  height: 0;
-  width: 0;
-  opacity: 0;
-  z-index: -1;
-  margin: 0;
-  padding: 0;
-  font-size: 0;
-  line-height: 0;
+body .wrapper .cards-container .card .small-lines.expand {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  left: 0;
+  bottom: auto;
 }
 
 ::-webkit-scrollbar {

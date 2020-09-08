@@ -36,18 +36,41 @@ $(document).ready((e) => {
 
     // -- functions
 
+    // * function to expand a card
+    function expand (trig) {
+        trig.addClass('expand');
+        trig.siblings().addClass('display');
+        trig.children('.details').addClass('expand');
+        trig.children('.small-lines').addClass('expand');
+        setTimeout(function() {
+            trig.addClass('overflowAllowed');
+        }, 500);
+    }
+
+    // * function to unexpand a card
+    function notExpand (trig) {
+        trig.removeClass('expand');
+        trig.siblings().removeClass('display');
+        trig.children('.details').removeClass('expand');
+        trig.children('.small-lines').removeClass('expand');
+        trig.scrollTop(0);
+        trig.removeClass('overflowAllowed');
+    }
+
 
     // TODO - cards should expand and unexpand on click
     $('.card').on('click', function () {
         var trig = $(this);
         if (trig.hasClass('expand')) {
-            trig.notExpand();
+            notExpand(trig);
         } else {
-            trig.expand();
+            expand(trig);
         }
     });
 
     // TODO - muscle part should be highlighted on card hover
+    
+
     // TODO - muscle part should stay highlighted when card is expanded
     // TODO - cards should expand on click on muscle part
 

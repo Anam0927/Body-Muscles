@@ -113,8 +113,7 @@ body {
 
             .card {
 
-                // : to make the cards take up all the height available and distribute equally
-                ////flex: 1;
+                z-index: 0;
 
                 // -- to avoid overflow
                 box-sizing: border-box;
@@ -125,32 +124,46 @@ body {
 
                 // : styles
                 padding: 0 20px;
-                height: 20%;
+                max-height: 20%;
+                min-height: 20%;
                 background: $black;
                 color: $white;
                 border: 1px solid $white;
+                cursor: pointer;
 
                 // // : to align header and details and give them appropriate heights
-                // display: grid;
-                // grid-template-columns: 1fr;
-                // grid-template-rows: auto auto;
-                // grid-auto-rows: min-content; // -- makes sure each row takes up only as much height as is required
+                //// display: grid;
+                //// grid-template-columns: 1fr;
+                //// grid-template-rows: auto auto;
+                //// grid-auto-rows: min-content; // -- makes sure each row takes up only as much height as is required
 
                 // -- transition
                 transition: all 0.5s ease-in-out;
                 transform-origin: top;
-
-                cursor: pointer;
+                transition-property: min-height, max-height, width, opacity, z-index, margin, padding, line-height;
 
                 // -- check 
                 // //background-color: wheat;
 
                 &.expand {
-                    height: 100%;
+                    min-height: 100%;
+                    padding-bottom: 20px;
+                }
 
-                    &.overflow {
-                        overflow-y: scroll;
-                    }
+                &.display {
+                    min-height: 0;
+                    max-height: 0;
+                    width: 0;
+                    opacity: 0;
+                    z-index: -1;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 0;
+                    line-height: 0;
+                }
+
+                &.overflowAllowed {
+                    overflow-y: scroll;
                 }
 
                 .head {
@@ -164,31 +177,28 @@ body {
                         flex: 4;
                         transition: line-height 500ms ease-in-out;
 
+                        z-index: 2;
+
                         // -- check
                         ////background-color: greenyellow;
-
-                        // &.expand {
-                        //     line-height: 1;
-                        // }
                     }
 
                     .icon {
                         flex: 1;
                         text-align: right;
 
+                        z-index: 2;
+
                         color: $red;
 
                         transition: transform 500ms linear;
-
-                        // &.expand {
-                        //     transform: rotate(180deg);
-                        // }
                     }
                 }
 
                 // : initially all details are hidden
                 .details {
                     opacity: 0;
+                    z-index: 2;
 
                     transition: all 1s ease-in-out;
 
@@ -200,9 +210,17 @@ body {
                 // : design lines
                 .small-lines {
                     position: absolute;
+                    z-index: 1;
                     bottom: -40%;
                     left: -30%;
                     transform: scale(0.75);
+                    transition: all 0.5s ease-in-out;
+
+                    &.expand {
+                        transform: scale(1);
+                        left: 0;
+                        bottom: auto;
+                    }
                 }
             }
 
@@ -210,17 +228,6 @@ body {
 
     }
 
-}
-
-.display {
-    height: 0;
-    width: 0;
-    opacity: 0;
-    z-index: -1;
-    margin: 0;
-    padding: 0;
-    font-size: 0;
-    line-height: 0;
 }
 
 ::-webkit-scrollbar {
