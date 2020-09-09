@@ -4,7 +4,6 @@
 $black: #000000;
 $red: #ff4a4a;
 $white: #ffffff;
-$blue: #0077b6;
 
 // -- Reset
 * {
@@ -90,6 +89,7 @@ body {
         .images {
             max-width: 100%;
             text-align: center;
+            filter: drop-shadow(0 0 3px $black);
 
             // -- check
             ////background: rgba(30, 30, 50, 0.3);
@@ -138,9 +138,10 @@ body {
                 //// grid-auto-rows: min-content; // -- makes sure each row takes up only as much height as is required
 
                 // -- transition
-                transition: all 0.5s ease-in-out;
-                transform-origin: top;
-                transition-property: min-height, max-height, width, opacity, z-index, margin, padding, line-height;
+                transition-property: min-height, max-height, width, opacity, z-index, margin, line-height, padding;
+                transition-duration: 500ms;
+                transition-timing-function: ease-in-out;
+                transform-origin: top center;
 
                 // -- check 
                 // //background-color: wheat;

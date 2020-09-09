@@ -58,6 +58,8 @@ body .wrapper {
 body .wrapper .images {
   max-width: 100%;
   text-align: center;
+  -webkit-filter: drop-shadow(0 0 3px #000000);
+          filter: drop-shadow(0 0 3px #000000);
 }
 
 body .wrapper .images img {
@@ -89,12 +91,14 @@ body .wrapper .cards-container .card {
   color: #ffffff;
   border: 1px solid #ffffff;
   cursor: pointer;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  -webkit-transform-origin: top;
-          transform-origin: top;
-  -webkit-transition-property: min-height, max-height, width, opacity, z-index, margin, padding, line-height;
-  transition-property: min-height, max-height, width, opacity, z-index, margin, padding, line-height;
+  -webkit-transition-property: min-height, max-height, width, opacity, z-index, margin, line-height, padding;
+  transition-property: min-height, max-height, width, opacity, z-index, margin, line-height, padding;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
 }
 
 body .wrapper .cards-container .card.expand {

@@ -1,8 +1,8 @@
 // -- Maphilight options
 $.fn.maphilight.defaults = {
     fill: true,
-    fillColor: '0077B6',
-    fillOpacity: 0.5,
+    fillColor: '153243',
+    fillOpacity: 0.3,
     stroke: false,
     strokeColor: '153243',
     strokeOpacity: 1,
@@ -41,11 +41,27 @@ $(document).ready((e) => {
 
     const parts = ['arm', 'abs', 'back', 'glutes', 'leg'];
 
+    const partClassNames = [];
+    const partNameAttr = [];
+    const partCardClass = []
+    $.each(parts, function (index, partName) {
+        const cardN = `.${partName}-card`;
+        const classN = `.${partName}`;
+        const nameN = `[name=\"${partName}\"]`;
+        partClassNames.push(classN);
+        partNameAttr.push(nameN);
+        partCardClass.push(cardN);
+    });
+
     // -- functions
 
     // * function to expand a card
     function expand(trig) {
         trig.addClass('expand');
+        trig.siblings().each(function (index, sibling) {
+            if($(sibling).hasClass("expand"))
+                notExpand($(sibling));
+        });
         trig.siblings().addClass('display');
         trig.children('.details').addClass('expand');
         trig.children('.small-lines').addClass('expand');
@@ -56,8 +72,11 @@ $(document).ready((e) => {
 
     // * function to unexpand a card
     function notExpand(trig) {
+        trig.siblings().each(function (index, sibling) {
+            if(!$(sibling).hasClass("expand"))
+                trig.siblings().removeClass('display');
+        });
         trig.removeClass('expand');
-        trig.siblings().removeClass('display');
         trig.children('.details').removeClass('expand');
         trig.children('.small-lines').removeClass('expand');
         trig.scrollTop(0);
@@ -77,29 +96,27 @@ $(document).ready((e) => {
 
     // TODO - muscle part should be highlighted on card hover
     $.each(parts, function (index, partName) {
-        const classN = `.${partName}-card`;
-        const cl = `.${partName}`;
-        const nameN = `[name=\"${partName}\"]`;
-        console.log($(cl));
-
-        $(cl).hover(() => {
-            $(nameN).trigger("mouseover");
-        }, () => {
-            $(nameN).trigger("mouseout");
-        });
+        const classN = partCardClass[index];
+        const nameN = partNameAttr[index];
 
         $(classN).hover(() => {
             $(nameN).trigger("mouseover");
         }, () => {
             $(nameN).trigger("mouseout");
         });
-
-        // $(nameN).on("click", function () {
-        //     $(classN).click();
-        // });
     });
 
     // TODO - cards should expand on click on muscle part
+    $.each(partClassNames, function (index, part) { 
+        const cardN = $(partCardClass[index]);
+        $(part).on("click", function() {
+            if (cardN.hasClass('expand')) {
+                notExpand(cardN);
+            } else {
+                expand(cardN);
+            }
+        });
+    });
 
     // : Card interaction related code - END
 
