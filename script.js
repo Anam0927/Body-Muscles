@@ -25,7 +25,7 @@ $.fn.maphilight.defaults = {
 $(document).ready((e) => {
 
     // -- image map plug-ins
-    $('img[usemap]').rwdImageMaps();
+    $('.map').rwdImageMaps();
     $('img[usemap]').maphilight();
 
     // -- make heading align center when cards are not expanded
@@ -34,21 +34,28 @@ $(document).ready((e) => {
 
     // : Card interaction related code
 
+    // -- variables
+
+    const cardsCon = $('.cards-container');
+    const cards = cardsCon.children();
+
+    const parts = ['arm', 'abs', 'back', 'glutes', 'leg'];
+
     // -- functions
 
     // * function to expand a card
-    function expand (trig) {
+    function expand(trig) {
         trig.addClass('expand');
         trig.siblings().addClass('display');
         trig.children('.details').addClass('expand');
         trig.children('.small-lines').addClass('expand');
-        setTimeout(function() {
+        setTimeout(function () {
             trig.addClass('overflowAllowed');
         }, 500);
     }
 
     // * function to unexpand a card
-    function notExpand (trig) {
+    function notExpand(trig) {
         trig.removeClass('expand');
         trig.siblings().removeClass('display');
         trig.children('.details').removeClass('expand');
@@ -59,7 +66,7 @@ $(document).ready((e) => {
 
 
     // TODO - cards should expand and unexpand on click
-    $('.card').on('click', function () {
+    cards.on('click', function () {
         var trig = $(this);
         if (trig.hasClass('expand')) {
             notExpand(trig);
@@ -69,9 +76,29 @@ $(document).ready((e) => {
     });
 
     // TODO - muscle part should be highlighted on card hover
-    
+    $.each(parts, function (index, partName) {
+        const classN = `.${partName}-card`;
+        const cl = `.${partName}`;
+        const nameN = `[name=\"${partName}\"]`;
+        console.log($(cl));
 
-    // TODO - muscle part should stay highlighted when card is expanded
+        $(cl).hover(() => {
+            $(nameN).trigger("mouseover");
+        }, () => {
+            $(nameN).trigger("mouseout");
+        });
+
+        $(classN).hover(() => {
+            $(nameN).trigger("mouseover");
+        }, () => {
+            $(nameN).trigger("mouseout");
+        });
+
+        // $(nameN).on("click", function () {
+        //     $(classN).click();
+        // });
+    });
+
     // TODO - cards should expand on click on muscle part
 
     // : Card interaction related code - END
