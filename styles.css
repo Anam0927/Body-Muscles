@@ -103,7 +103,8 @@ body .wrapper .cards-container .card {
 }
 
 body .wrapper .cards-container .card:focus {
-  outline: 2px solid #ff4a4a;
+  -webkit-box-shadow: 0 0 5px #ff4a4a;
+          box-shadow: 0 0 5px #ff4a4a;
 }
 
 body .wrapper .cards-container .card.expand {

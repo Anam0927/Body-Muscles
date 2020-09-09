@@ -1,0 +1,35 @@
+{
+  "name": "bodymusclestake2",
+  "version": "2.1.0",
+  "description": "A website that highlights and provides info about various bode muscles.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anam0927/bodyMusclesTake2.git"
+  },
+  "keywords": [
+    "website",
+    "body",
+    "muscles",
+    "image-maps",
+    "maphilight",
+    "responsive",
+    "rwdImageMaps",
+    "jQuery",
+    "javascript",
+    "html",
+    "css",
+    "sass",
+    "scss",
+    "interactive"
+  ],
+  "author": "Anam Khuram",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anam0927/bodyMusclesTake2/issues"
+  },
+  "homepage": "https://github.com/Anam0927/bodyMusclesTake2#readme"
+}

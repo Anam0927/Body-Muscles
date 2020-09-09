@@ -25,7 +25,7 @@ $.fn.maphilight.defaults = {
 $(document).ready((e) => {
 
     // -- image map plug-ins
-    $('.map').rwdImageMaps();
+    $('img[usemap]').rwdImageMaps();
     $('img[usemap]').maphilight();
 
     // -- make heading align center when cards are not expanded
@@ -66,6 +66,7 @@ $(document).ready((e) => {
         trig.children('.details').addClass('expand');
         trig.children('.small-lines').addClass('expand');
         trig.find('.icon').addClass('expand');
+        trig.focusin();
         setTimeout(function () {
             trig.addClass('overflowAllowed');
         }, 500);
@@ -80,6 +81,7 @@ $(document).ready((e) => {
         trig.find('.icon').removeClass('expand');
         trig.scrollTop(0);
         trig.removeClass('overflowAllowed');
+        trig.focusout();
     }
 
 
@@ -99,8 +101,16 @@ $(document).ready((e) => {
         const nameN = partNameAttr[index];
 
         $(classN).hover(() => {
-            $(nameN).trigger("mouseover");
+            if (!($(classN).hasClass("expand")))
+                $(nameN).trigger("mouseover");
         }, () => {
+            if (!($(classN).hasClass("expand")))
+                $(nameN).trigger("mouseout");
+        });
+
+        $(classN).focusin(function (e) { 
+            $(nameN).trigger("mouseover");
+        }).focusout(function(e) {
             $(nameN).trigger("mouseout");
         });
     });
@@ -210,6 +220,9 @@ $(document).ready((e) => {
             nextButton.removeClass('is-hidden');
             prevButton.removeClass('is-hidden');
         }
+
+        // -- change part focus
+        
     });
 
     // TODO - when nav indicator is clicked, move to that slide
