@@ -1,12 +1,12 @@
 // -- Maphilight options
 $.fn.maphilight.defaults = {
     fill: true,
-    fillColor: '153243',
-    fillOpacity: 0.3,
-    stroke: false,
-    strokeColor: '153243',
-    strokeOpacity: 1,
-    strokeWidth: 1,
+    fillColor: '335C81',
+    fillOpacity: 0.5,
+    stroke: true,
+    strokeColor: '335C81',
+    strokeOpacity: 0.75,
+    strokeWidth: 0.75,
     fade: true,
     alwaysOn: false,
     neverOn: false,
@@ -16,7 +16,7 @@ $.fn.maphilight.defaults = {
     shadowX: 0,
     shadowY: 0,
     shadowRadius: 6,
-    shadowColor: '153243',
+    shadowColor: '335C81',
     shadowOpacity: 0.2,
     shadowPosition: 'outside',
     shadowFrom: false
@@ -57,14 +57,15 @@ $(document).ready((e) => {
 
     // * function to expand a card
     function expand(trig) {
-        trig.addClass('expand');
         trig.siblings().each(function (index, sibling) {
             if($(sibling).hasClass("expand"))
                 notExpand($(sibling));
         });
+        trig.addClass('expand');
         trig.siblings().addClass('display');
         trig.children('.details').addClass('expand');
         trig.children('.small-lines').addClass('expand');
+        trig.find('.icon').addClass('expand');
         setTimeout(function () {
             trig.addClass('overflowAllowed');
         }, 500);
@@ -72,13 +73,11 @@ $(document).ready((e) => {
 
     // * function to unexpand a card
     function notExpand(trig) {
-        trig.siblings().each(function (index, sibling) {
-            if(!$(sibling).hasClass("expand"))
-                trig.siblings().removeClass('display');
-        });
+        trig.siblings().removeClass('display');
         trig.removeClass('expand');
         trig.children('.details').removeClass('expand');
         trig.children('.small-lines').removeClass('expand');
+        trig.find('.icon').removeClass('expand');
         trig.scrollTop(0);
         trig.removeClass('overflowAllowed');
     }

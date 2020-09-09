@@ -82,7 +82,7 @@ body {
         // : layout for desktop
         display: grid;
         grid-template-columns: repeat(6, 1fr);
-        ////align-items: center;
+        align-items: center;
         justify-content: center;
 
         // : Pictures
@@ -141,10 +141,13 @@ body {
                 transition-property: min-height, max-height, width, opacity, z-index, margin, line-height, padding;
                 transition-duration: 500ms;
                 transition-timing-function: ease-in-out;
-                transform-origin: top center;
 
                 // -- check 
                 // //background-color: wheat;
+
+                &:focus {
+                    outline: 2px solid $red;
+                }
 
                 &.expand {
                     min-height: 100%;
@@ -159,7 +162,6 @@ body {
                     z-index: -1;
                     margin: 0;
                     padding: 0;
-                    font-size: 0;
                     line-height: 0;
                 }
 
@@ -186,13 +188,18 @@ body {
 
                     .icon {
                         flex: 1;
-                        text-align: right;
+                        text-align: center;
 
                         z-index: 2;
 
                         color: $red;
 
                         transition: transform 500ms linear;
+                        transform-origin: center;
+
+                        &.expand {
+                            transform: rotate(180deg);
+                        }
                     }
                 }
 
@@ -201,7 +208,7 @@ body {
                     opacity: 0;
                     z-index: 2;
 
-                    transition: all 1s ease-in-out;
+                    transition: opacity 500ms ease-in-out;
 
                     &.expand {
                         opacity: 1;

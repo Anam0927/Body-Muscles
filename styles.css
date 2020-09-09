@@ -50,6 +50,9 @@ body .wrapper {
   display: grid;
   -ms-grid-columns: (1fr)[6];
       grid-template-columns: repeat(6, 1fr);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -97,8 +100,10 @@ body .wrapper .cards-container .card {
           transition-duration: 500ms;
   -webkit-transition-timing-function: ease-in-out;
           transition-timing-function: ease-in-out;
-  -webkit-transform-origin: top center;
-          transform-origin: top center;
+}
+
+body .wrapper .cards-container .card:focus {
+  outline: 2px solid #ff4a4a;
 }
 
 body .wrapper .cards-container .card.expand {
@@ -114,7 +119,6 @@ body .wrapper .cards-container .card.display {
   z-index: -1;
   margin: 0;
   padding: 0;
-  font-size: 0;
   line-height: 0;
 }
 
@@ -144,20 +148,27 @@ body .wrapper .cards-container .card .head .icon {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  text-align: right;
+  text-align: center;
   z-index: 2;
   color: #ff4a4a;
   -webkit-transition: -webkit-transform 500ms linear;
   transition: -webkit-transform 500ms linear;
   transition: transform 500ms linear;
   transition: transform 500ms linear, -webkit-transform 500ms linear;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+body .wrapper .cards-container .card .head .icon.expand {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
 body .wrapper .cards-container .card .details {
   opacity: 0;
   z-index: 2;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
+  -webkit-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
 }
 
 body .wrapper .cards-container .card .details.expand {
