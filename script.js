@@ -116,12 +116,6 @@ $(document).ready(() => {
                     $(nameN).trigger("mouseout");
             });
         }
-
-        $(classN).focusin(function (e) {
-            $(nameN).trigger("mouseover");
-        }).focusout(function (e) {
-            $(nameN).trigger("mouseout");
-        });
     });
 
     // TODO - cards should expand on click on muscle part
@@ -280,22 +274,19 @@ $(document).ready(() => {
     });
 
     // : Carousel related code - END
-    if (mql.matches) {
         $(document).on("click", () => {
 
 
             $.each(cards, function (index, card) {
 
-                const prt = partNameAttr[index];
-                if ($(card).hasClass('expand')) {
-                    console.log(prt);
-                    $(prt).trigger("mouseover");
-                } else {
-                    $(prt).trigger("mouseout");
-                }
+                const nameN = partNameAttr[index];
+                $(card).focusin(function (e) {
+                    $(nameN).trigger("mouseover");
+                }).focusout(function (e) {
+                    $(nameN).trigger("mouseout");
+                });
 
             });
 
         });
-    }
 });
