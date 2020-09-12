@@ -146,7 +146,7 @@ body {
                 // //background-color: wheat;
 
                 &:focus {
-                    box-shadow: 0 0 5px $red;
+                    box-shadow: 0 0 10px $red;
                 }
 
                 &.expand {
@@ -228,6 +228,7 @@ body {
                         transform: scale(1);
                         left: 0;
                         bottom: auto;
+                        opacity: 0.5;
                     }
                 }
             }
@@ -239,7 +240,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -319,7 +320,8 @@ body {
             .cards-container {
 
                 height: 30%;
-                min-width: 60%;
+                width: fit-content;
+                max-width: 75%;
                 margin: 0 auto 5vh auto;
 
                 // -- check
@@ -333,6 +335,13 @@ body {
                         left: 0;
                         right: 0;
                         top: 0;
+
+                        &.expand {
+                            transform: scale(0.75);
+                            top: auto;
+                            left: 0;
+                            bottom: auto;
+                        }
                     }
                 }
             }
@@ -342,7 +351,7 @@ body {
                 ////background-color: lightcoral;
 
                 height: calc(70% - 5vh);
-                width: 60%;
+                width: 90%;
                 margin: 0 auto;
                 position: relative;
 
@@ -361,7 +370,7 @@ body {
                         width: 100%;
                         position: relative;
 
-                        transition: transform 500ms ease-in-out;
+                        transition: transform 600ms ease-in-out;
 
                         // -- check 
                         ////background-color: darkorchid;
@@ -371,7 +380,7 @@ body {
                             height: 100%;
                             width: 100%;
                             opacity: 0;
-                            transition: opacity 400ms ease-in-out;
+                            transition: opacity 600ms ease-in-out;
 
                             &.current__slide {
                                 opacity: 1;
@@ -424,11 +433,11 @@ body {
 
                     // : positioning
                     &--left {
-                        left: 0;
+                        left: 10%;
                     }
 
                     &--right {
-                        right: 0;
+                        right: 10%;
                         z-index: 1;
                     }
 
@@ -464,5 +473,52 @@ body {
                 }
             }
         }
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+
+        .wrapper {
+
+            .cards-container {
+
+                min-width: 100%;
+
+            }
+
+            .carousel {
+
+                .carousel__track-container {
+
+                    .carousel__track {
+
+                        .carousel__slide {
+                            transition: opacity 750ms ease-in-out;
+                        }
+
+                    }
+                }
+
+                .carousel__button {
+
+                    &--left {
+                        left: -5%;
+                    }
+
+                    &--right {
+                        right: -5%;
+                    }
+
+                }
+
+            }
+
+        }
+
     }
 }

@@ -103,8 +103,8 @@ body .wrapper .cards-container .card {
 }
 
 body .wrapper .cards-container .card:focus {
-  -webkit-box-shadow: 0 0 5px #ff4a4a;
-          box-shadow: 0 0 5px #ff4a4a;
+  -webkit-box-shadow: 0 0 10px #ff4a4a;
+          box-shadow: 0 0 10px #ff4a4a;
 }
 
 body .wrapper .cards-container .card.expand {
@@ -192,10 +192,11 @@ body .wrapper .cards-container .card .small-lines.expand {
           transform: scale(1);
   left: 0;
   bottom: auto;
+  opacity: 0.5;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -264,7 +265,10 @@ body .wrapper .cards-container .card .small-lines.expand {
   }
   body .wrapper .cards-container {
     height: 30%;
-    min-width: 60%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 75%;
     margin: 0 auto 5vh auto;
   }
   body .wrapper .cards-container .card .small-lines {
@@ -275,9 +279,16 @@ body .wrapper .cards-container .card .small-lines.expand {
     right: 0;
     top: 0;
   }
+  body .wrapper .cards-container .card .small-lines.expand {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+    top: auto;
+    left: 0;
+    bottom: auto;
+  }
   body .wrapper .carousel {
     height: calc(70% - 5vh);
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
     position: relative;
   }
@@ -292,17 +303,17 @@ body .wrapper .cards-container .card .small-lines.expand {
     height: 100%;
     width: 100%;
     position: relative;
-    -webkit-transition: -webkit-transform 500ms ease-in-out;
-    transition: -webkit-transform 500ms ease-in-out;
-    transition: transform 500ms ease-in-out;
-    transition: transform 500ms ease-in-out, -webkit-transform 500ms ease-in-out;
+    -webkit-transition: -webkit-transform 600ms ease-in-out;
+    transition: -webkit-transform 600ms ease-in-out;
+    transition: transform 600ms ease-in-out;
+    transition: transform 600ms ease-in-out, -webkit-transform 600ms ease-in-out;
   }
   body .wrapper .carousel .carousel__track-container .carousel__track .carousel__slide {
     height: 100%;
     width: 100%;
     opacity: 0;
-    -webkit-transition: opacity 400ms ease-in-out;
-    transition: opacity 400ms ease-in-out;
+    -webkit-transition: opacity 600ms ease-in-out;
+    transition: opacity 600ms ease-in-out;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -347,10 +358,10 @@ body .wrapper .cards-container .card .small-lines.expand {
             box-shadow: 0 1px 2px -1px #ff4a4a;
   }
   body .wrapper .carousel .carousel__button--left {
-    left: 0;
+    left: 10%;
   }
   body .wrapper .carousel .carousel__button--right {
-    right: 0;
+    right: 10%;
     z-index: 1;
   }
   body .wrapper .carousel .carousel__button.is-hidden {
@@ -382,6 +393,25 @@ body .wrapper .cards-container .card .small-lines.expand {
   }
   body .wrapper .carousel .carousel__nav .carousel__indicator.current__slide {
     background-color: #ff4a4a;
+  }
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body .wrapper .cards-container {
+    min-width: 100%;
+  }
+  body .wrapper .carousel .carousel__track-container .carousel__track .carousel__slide {
+    -webkit-transition: opacity 750ms ease-in-out;
+    transition: opacity 750ms ease-in-out;
+  }
+  body .wrapper .carousel .carousel__button--left {
+    left: -5%;
+  }
+  body .wrapper .carousel .carousel__button--right {
+    right: -5%;
   }
 }
 /*# sourceMappingURL=styles.css.map */

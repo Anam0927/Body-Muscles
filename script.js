@@ -25,8 +25,15 @@ $.fn.maphilight.defaults = {
 $(document).ready(() => {
 
     // -- image map plug-ins
-    $('.map').maphilight();
-    $('.map').imageMap(0);
+    let mql = window.matchMedia('(max-width: 992px)');
+    console.log(mql);
+    if (mql.matches) {
+        $('img[usemap]').maphilight();
+        $('img[usemap]').imageMap(0);
+    } else {
+        $('.map').maphilight();
+        $('.map').imageMap(0);
+    }
 
     // -- make heading align center when cards are not expanded
     const heightOfCard = $('.card').height() + 'px';
@@ -58,7 +65,7 @@ $(document).ready(() => {
     // * function to expand a card
     function expand(trig) {
         trig.siblings().each(function (index, sibling) {
-            if($(sibling).hasClass("expand"))
+            if ($(sibling).hasClass("expand"))
                 notExpand($(sibling));
         });
         trig.addClass('expand');
@@ -95,30 +102,32 @@ $(document).ready(() => {
         }
     });
 
-    // TODO - muscle part should be highlighted on card hover
+    // TODO - muscle part should be highlighted on card hover and focus
     $.each(parts, function (index, partName) {
         const classN = partCardClass[index];
         const nameN = partNameAttr[index];
 
-        $(classN).hover(() => {
-            if (!($(classN).hasClass("expand")))
-                $(nameN).trigger("mouseover");
-        }, () => {
-            if (!($(classN).hasClass("expand")))
-                $(nameN).trigger("mouseout");
-        });
+        if (!(mql.matches)) {
+            $(classN).hover(() => {
+                if (!($(classN).hasClass("expand")))
+                    $(nameN).trigger("mouseover");
+            }, () => {
+                if (!($(classN).hasClass("expand")))
+                    $(nameN).trigger("mouseout");
+            });
+        }
 
-        $(classN).focusin(function (e) { 
+        $(classN).focusin(function (e) {
             $(nameN).trigger("mouseover");
-        }).focusout(function(e) {
+        }).focusout(function (e) {
             $(nameN).trigger("mouseout");
         });
     });
 
     // TODO - cards should expand on click on muscle part
-    $.each(partClassNames, function (index, part) { 
+    $.each(partClassNames, function (index, part) {
         const cardN = $(partCardClass[index]);
-        $(part).on("click", function() {
+        $(part).on("click", function () {
             if (cardN.hasClass('expand')) {
                 notExpand(cardN);
             } else {
@@ -221,9 +230,10 @@ $(document).ready(() => {
             prevButton.removeClass('is-hidden');
         }
 
-        // -- change part focus
-        
+        console.log(currentSlide);
+
     });
+
 
     // TODO - when nav indicator is clicked, move to that slide
     nav.on('click tap', (e) => {
@@ -270,4 +280,22 @@ $(document).ready(() => {
     });
 
     // : Carousel related code - END
+
+    $(document).on("click", () => {
+        if (mql.matches) {
+
+            $.each(cards, function (index, card) { 
+
+                const prt = partNameAttr[index];
+                 if ($(card).hasClass('expand')) {
+                     console.log(prt);
+                     $(prt).trigger("mouseover");
+                 } else {
+                    $(prt).trigger("mouseout");
+                 }
+
+            });
+    
+        }
+    });
 });
