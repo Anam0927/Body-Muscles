@@ -280,22 +280,22 @@ $(document).ready(() => {
     });
 
     // : Carousel related code - END
+    if (mql.matches) {
+        $(document).on("click", () => {
 
-    $(document).on("click", () => {
-        if (mql.matches) {
 
-            $.each(cards, function (index, card) { 
+            $.each(cards, function (index, card) {
 
                 const prt = partNameAttr[index];
-                 if ($(card).hasClass('expand')) {
-                     console.log(prt);
-                     $(prt).trigger("mouseover");
-                 } else {
+                if ($(card).hasClass('expand')) {
+                    console.log(prt);
+                    $(prt).trigger("mouseover");
+                } else {
                     $(prt).trigger("mouseout");
-                 }
+                }
 
             });
-    
-        }
-    });
+
+        });
+    }
 });
