@@ -1,6 +1,6 @@
-# Muscles of the Body - A Log Diary #
+# Muscles of the Body - A Log #
 
-## Log 1 - Beginning from an End ##
+## Log - Beginning from an End ##
 
 >*The harder you work for something, the greater you'll feel when you achieve it.*
 
